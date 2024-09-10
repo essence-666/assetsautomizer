@@ -12,6 +12,7 @@ def update_table() -> None:
             "X-CoinAPI-Key": config['CRYPTO_API_KEY'] 
         }
         ton_value = requests.get(config['CRYPTO_URL'], headers=headers).json()['rate']
+        print(ton_value)
         fill_cell(ton_value, config['TONCELL'])
         fill_cell(rub_value, config['RUBCELL'])
         fill_cell("", "I1")
